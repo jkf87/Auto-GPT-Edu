@@ -79,16 +79,27 @@ ElevenLabs 키(AI가 말하기를 원하는 경우)
 git clone https://github.com/Torantulino/Auto-GPT.git
 ```
 
+git 설치가 되어 있지 않으시다면 아래 링크에서 설치할 수 있습니다(https://git-scm.com/download/win)
+
+ssl verify문제로 설치가 되지 않는다면 다음 명령어를 입력하여 verify를 끄고 진행합니다.
+```
+git config --global http.sslVerify false
+```
 프로젝트 디렉토리로 이동합니다:
 *(CMD 창에 입력하면 방금 다운로드한 리포지토리로 이동합니다)*.
 ```
-cd '자동-GPT'
+cd 'Auto-GPT'
 ```
 
 필요한 종속성을 설치합니다:
 *(다시 CMD 창에 입력하세요.)*
 ```
 pip install -r requirements.txt
+```
+
+SSL문제로 설치시 오류가 발생한다면 다음 명령어로 입력해보세요.
+```
+pip --trusted-host pypi.org --trusted-host files.pythonhosted.org install -r requirements.txt
 ```
 
 .env.template`의 이름을 '.env`로 바꾸고 `OPENAI_API_KEY`를 입력합니다. 음성 모드를 사용하려는 경우 `ELEVEN_LABS_API_KEY`도 입력하세요.
@@ -118,10 +129,10 @@ Azure 인스턴스에서 GPT를 사용하려면 `USE_AZURE`를 `False`로 설정
 이 섹션은 선택 사항이며, Google 검색을 실행할 때 429 오류에 문제가 있는 경우 공식 Google API를 사용하세요.
 구글 공식 검색` 명령을 사용하려면 환경 변수에 구글 API 키를 설정해야 합니다.
 
-Google 클라우드 콘솔](https://console.cloud.google.com/)로 이동합니다.
+Google 클라우드 콘솔](https://console.cloud.google.com/) 로 이동합니다.
 아직 계정이 없는 경우 계정을 만들고 로그인하세요.
 페이지 상단의 "프로젝트 선택" 드롭다운을 클릭하고 "새 프로젝트"를 클릭해 새 프로젝트를 만듭니다. 이름을 지정하고 "만들기"를 클릭합니다.
-API 및 서비스 대시보드](https://console.cloud.google.com/apis/dashboard)로 이동하여 "API 및 서비스 활성화"를 클릭합니다. "사용자 지정 검색 API"를 검색하여 클릭한 다음 "사용"을 클릭합니다.
+API 및 서비스 대시보드](https://console.cloud.google.com/apis/dashboard) 로 이동하여 "API 및 서비스 활성화"를 클릭합니다. "사용자 지정 검색 API"를 검색하여 클릭한 다음 "사용"을 클릭합니다.
 자격증명](https://console.cloud.google.com/apis/credentials) 페이지로 이동하여 "자격증명 생성"을 클릭합니다. "API 키"를 선택합니다.
 API 키를 복사하여 컴퓨터에서 `GOOGLE_API_KEY`라는 환경 변수로 설정합니다. 아래 환경 변수 설정을 참조하세요.
 사용자 지정 검색 엔진](https://cse.google.com/cse/all) 페이지로 이동하여 '추가'를 클릭합니다.
