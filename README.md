@@ -60,7 +60,7 @@ https://user-images.githubusercontent.com/22963551/228855501-2f5777cf-755b-4407-
 ## 📋 요구 사항
 [파이썬 3.8 이상](https://www.tutorialspoint.com/how-to-install-python-in-windows)
 OpenAI API 키
-[핀콘 API 키](https://www.pinecone.io/)
+[파인콘 API 키](https://www.pinecone.io/)
 
 선택 사항입니다:
 ElevenLabs 키(AI가 말하기를 원하는 경우)
